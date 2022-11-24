@@ -14,3 +14,4 @@ CSS
 BEM
 Grid Layout
 JavaScript
+[Ссылка на проект] (https://yulianashatir.github.io/mesto/index.html)
