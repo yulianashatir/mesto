@@ -15,7 +15,7 @@
     transition: opacity .3s ease;
 }
 
-.popup__button-exit {
+.popup__button-exit:hover {
     opacity: .6;
     cursor: pointer;
 }
@@ -28,12 +28,3 @@
         right: 0;
     }
 }
-
-
-
-/*@media screen and (max-width: 620px) {
-        .popup__close-button {
-          top: -50px;
-          right: 0;
-        }
-      }*/
