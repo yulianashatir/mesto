@@ -23,65 +23,59 @@
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
                     <button type="button" class="profile__edit-button"></button>
                 </div>
-                <h2 class="profile__subtitle">Исследователь океана</h2>
+                <p class="profile__subtitle">Исследователь океана</p>
             </div>
             <button type="button" class="profile__add-button"></button>
         </section>
-        <section class="elements-container">
-            <ul class="elements">
-                <li class="element">
+        <section class="elements">
+            <ul class="elements__list">
+              <li class="element">
                     <img class="element__image" src="./image/alice-pasqual-M6ZYi6AH2-s-unsplash.jpg" alt="Завтрак">
                     <div class="element__info">
-                        <h3 class="element__title">Завтрак</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Завтрак</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
                 <li class="element">
                     <img class="element__image" src="./image/bakd-raw-by-karolin-baitinger-eYuOHOq2tQE-unsplash.jpg"
                         alt="Ланч">
                     <div class="element__info">
-                        <h3 class="element__title">Ланч</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Ланч</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
                 <li class="element">
                     <img class="element__image" src="./image/ali-choubin-I0B_QnY2VOQ-unsplash.jpg" alt="Обед">
                     <div class="element__info">
-                        <h3 class="element__title">Обед</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Обед</h2>
+                       <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
                 <li class="element">
                     <img class="element__image" src="./image/paras-kapoor-p0NGpQt-Mmw-unsplash.jpg" alt="Полдник">
                     <div class="element__info">
-                        <h3 class="element__title">Полдник</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Полдник</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
                 <li class="element">
                     <img class="element__image" src="./image/shayna-douglas-BOm2WQbfNe4-unsplash.jpg" alt="Ужин">
                     <div class="element__info">
-                        <h3 class="element__title">Ужин</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Ужин</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
                 <li class="element">
                     <img class="element__image" src="./image/kim-ick-yyoNYCmTVbw-unsplash.jpg" alt="Коктейль">
                     <div class="element__info">
-                        <h3 class="element__title">Коктейль</h3>
-                        <div class="element__like">
-                            <button type="button" class="element__like-button"></button>
-                        </div>
+                        <h2 class="element__title">Коктейль</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
                     </div>
                 </li>
             </ul>
@@ -92,12 +86,12 @@
     </footer>
     <div class="popup">
         <div class="popup__container">
-            <button class="popup__button-exit"></button>
+            <button type="button" class="popup__button-exit"></button>
             <form class="popup__form" name="popupForm">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input name="Autorname" type="text" class="popup__input popup__input_data_name" value="Автор">
-                <input name="Autorjob" type="text" class="popup__input popup__input_data_job" value="Вид деятельности">
-                <button class="popup__button">Сохранить</button>
+                <input name="autorName" type="text" class="popup__input popup__input_data_name" value="Автор">
+                <input name="autorJob" type="text" class="popup__input popup__input_data_job" value="Вид деятельности">
+                <button type="submit" class="popup__button">Сохранить</button>
             </form>
         </div>
     </div>

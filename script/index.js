@@ -1,16 +1,16 @@
-let popupOpen = document.querySelector('.profile__edit-button');
-let popup = document.querySelector('.popup');
-let popupClose = document.querySelector('.popup__button-exit');
-let Autorname = document.querySelector('.popup__input_data_name');
-let Autorjob = document.querySelector('.popup__input_data_job');
-let popupForm = document.querySelector('.popup__form');
-let profilename = document.querySelector('.profile__name');
-let profilejob = document.querySelector('.profile__job');
+const popupOpen = document.querySelector('.profile__edit-button');
+const popup = document.querySelector('.popup');
+const popupClose = document.querySelector('.popup__button-exit');
+const autorName = document.querySelector('.popup__input_data_name');
+const autorJob = document.querySelector('.popup__input_data_job');
+const popupForm = document.querySelector('.popup__form');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
 
 function open() {
   popup.classList.add('popup_opened');
-  Autorname.value = profilename.textContent;
-  Autorjob.value = profilejob.textContent;
+  autorName.value = profileTitle.textContent;
+  autorJob.value = profileSubtitle.textContent;
 }
 
 function close() {
@@ -19,14 +19,12 @@ function close() {
 
 function submit(evt) {
   evt.preventDefault();
-  profilename.textContent = Autorname.value;
-  profilejob.textContent = Autorjob.value;
+  profileTitle.textContent = autorName.value;
+  profileSubtitle.textContent = autorJob.value;
   close();
 }
 
-if (popup.classList.contains('popup_opened') === false) {
-  popupOpen.addEventListener('click', open);
-}
+popupOpen.addEventListener('click', open);
 
 popupClose.addEventListener('click', close);
 
