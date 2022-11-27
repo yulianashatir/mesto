@@ -9,19 +9,17 @@
     width: 100%;
     min-height: 50px;
     transition: .2s;
-    border-radius: 10px;
-  }
-  
-  .popup__button:hover {
+    border-radius: 2px;
+}
+
+.popup__button:hover {
     opacity: .8;
     cursor: pointer;
-  }
-  
-  @media screen and (max-width: 475px) {
-    .popup__button {
-      font-size: 14px;
-      line-height: 17px;
-    }
-  }
+}
 
-  
+@media screen and (max-width: 475px) {
+    .popup__button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

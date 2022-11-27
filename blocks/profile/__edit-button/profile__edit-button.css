@@ -10,6 +10,8 @@
   display: inline-block;
   transition: .2s;
   outline: none;
+  
+  
 }
 
 .profile__edit-button:hover {
