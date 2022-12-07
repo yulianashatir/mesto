@@ -1,0 +1,10 @@
+.popup__button__exit_type_image {
+    right: 0;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .popup__button__exit_type_image{
+      right: -40px;
+    }
+  }
+  

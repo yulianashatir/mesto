@@ -28,67 +28,53 @@
             <button type="button" class="profile__add-button"></button>
         </section>
         <section class="elements">
-            <ul class="elements__list">
-              <li class="element">
-                    <img class="element__image" src="./image/alice-pasqual-M6ZYi6AH2-s-unsplash.jpg" alt="Завтрак">
-                    <div class="element__info">
-                        <h2 class="element__title">Завтрак</h2>
-                        <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./image/bakd-raw-by-karolin-baitinger-eYuOHOq2tQE-unsplash.jpg"
-                        alt="Ланч">
-                    <div class="element__info">
-                        <h2 class="element__title">Ланч</h2>
-                        <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./image/ali-choubin-I0B_QnY2VOQ-unsplash.jpg" alt="Обед">
-                    <div class="element__info">
-                        <h2 class="element__title">Обед</h2>
-                       <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./image/paras-kapoor-p0NGpQt-Mmw-unsplash.jpg" alt="Полдник">
-                    <div class="element__info">
-                        <h2 class="element__title">Полдник</h2>
-                        <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./image/shayna-douglas-BOm2WQbfNe4-unsplash.jpg" alt="Ужин">
-                    <div class="element__info">
-                        <h2 class="element__title">Ужин</h2>
-                        <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class="element__image" src="./image/kim-ick-yyoNYCmTVbw-unsplash.jpg" alt="Коктейль">
-                    <div class="element__info">
-                        <h2 class="element__title">Коктейль</h2>
-                        <button type="button" class="element__like-button"></button>
-                    </div>
-                </li>
-            </ul>
-        </section>
+            <ul class="elements__list"></ul>
+               </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <section class="popup popup_type_profile">
         <div class="popup__container">
             <button type="button" class="popup__button-exit"></button>
-            <form class="popup__form" name="popupForm">
+            <form class="popup__input-list" name="popupForm">
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="autorName" type="text" class="popup__input popup__input_data_name" value="Автор">
                 <input name="autorJob" type="text" class="popup__input popup__input_data_job" value="Вид деятельности">
                 <button type="submit" class="popup__button">Сохранить</button>
             </form>
         </div>
-    </div>
+    </section>
+    <section class="popup popup_type_elements">
+        <div class="popup__container">
+          <button class="popup__button-exit" type="button"></button>
+          
+            <form  class="popup__input-list" name="popup-elements-form">
+                <h2 class="popup__title">Новое место</h2>
+              <input type="text" name="autorName" placeholder="Название" class="popup__input popup__input_place_name" required>
+              <input type="url" name="autorJob" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link" required>
+              <button class="popup__button" type="submit">Создать</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="popup popup_type_image">
+        <figure class=" popup__container_type_image">
+          <button class="popup__button-exit popup__button-exit_type_image" type="button"></button>
+          <img src="#" alt="" class="popup__image">
+          <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+      </section>
+      <template id="template">
+        <li class="element">
+          <img src="#" alt="" class="element__image">
+          <button class="element__delete-button" type="button"></button>
+          <div class="element__info">
+            <h2 class="element__title"></h2>
+            <button class="element__like-button" type="button"></button>
+          </div>
+        </li>
+      </template>
     <script src="./script/index.js"></script>
 </body>
 
