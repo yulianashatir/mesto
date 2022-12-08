@@ -65,21 +65,26 @@ const closePopup = item => {
 };
 
 const createElement = (item) => {
-const itemElement = itemTemplate.content.cloneNode(true);
-const elementImgElm = itemElement.querySelector('.element__image');
-const popupImgElm = popupImageElement.querySelector('.popup__image');
-itemElement.querySelector('.element__title').textContent = item['name'];
-elementImgElm.src = item['link'];
-elementImgElm.alt = `${item['name']}. Фотография`;
- elementImgElm.addEventListener('click', function() {
-popupFigcaptionElement.textContent = item['name'];
-popupImgElm.src = item['link'];
-popupImgElm.alt = `${item['name']}. Фотография`;
-openPopup(popupImageElement);
+  const itemElement = itemTemplate.content.cloneNode(true);
+  const elementImgElm = itemElement.querySelector('.element__image');
+  const popupImgElm = popupImageElement.querySelector('.popup__image');
+  itemElement.querySelector('.element__title').textContent = item['name'];
+  elementImgElm.src = item['link'];
+  elementImgElm.alt = `${item['name']}. Фотография`;
+  elementImgElm.addEventListener('click', function() {
+  popupFigcaptionElement.textContent = item['name'];
+  popupImgElm.src = item['link'];
+  popupImgElm.alt = `${item['name']}. Фотография`;
+  openPopup(popupImageElement);
 });
   
-itemElement.querySelector('.element__like-button').addEventListener('click', event => {toggleLikeBtn(event)});
-itemElement.querySelector('.element__delete-button').addEventListener('click', event => {removeElement(event)});return itemElement;
+itemElement.querySelector('.element__like-button').addEventListener('click', event => {
+  toggleLikeBtn(event)
+});
+  itemElement.querySelector('.element__delete-button').addEventListener('click', event => {
+  removeElement(event)
+});
+  return itemElement;
 };
 
 const renderElement = (name, link) => {
@@ -87,24 +92,25 @@ const renderElement = (name, link) => {
 };
 
 const addNewElement = evt => {
-evt.preventDefault();
-renderElement(popupPlaceElement.value, popupLinkElement.value);
-closePopup(popupAddCard);
-popupPlaceElement.value = 'Reset'; 
-popupLinkElement.value = 'Reset';
+  evt.preventDefault();
+  renderElement(popupPlaceElement.value, popupLinkElement.value);
+  closePopup(popupAddCard);
+  popupElementsForm.reset();
 };
 
 initialElements.reverse().forEach(item => {
-renderElement(item.name, item.link);
+  renderElement(item.name, item.link);
 });
 
 editBtnElement.addEventListener('click', () => {
-openPopup(popupEditProfile);
-autorNameElement.value = autorNameElement.textContent;
-autorJobElement.value = autorJobElement.textContent;
+  openPopup(popupEditProfile);
+  autorNameElement.value = autorNameElement.textContent;
+  autorJobElement.value = autorJobElement.textContent;
 });
 
-popupBtnExitElement.addEventListener('click', () => {closePopup(popupEditProfile)}); 
+popupBtnExitElement.addEventListener('click', () => {
+  closePopup(popupEditProfile)
+}); 
 popupProfileForm.addEventListener('submit', evt => {
   evt.preventDefault();
   autorNameElement.textContent = popupNameElement.value;
@@ -112,7 +118,15 @@ popupProfileForm.addEventListener('submit', evt => {
   closePopup(popupEditProfile);
 }); 
 
-addBtnElement.addEventListener('click', () => {openPopup(popupAddCard);}); 
-popupElementsBtnExitElement.addEventListener('click', () => {closePopup(popupAddCard);}); 
-popupElementsForm.addEventListener('submit', evt => {addNewElement(evt);}); 
-popupImgBtnExitElement.addEventListener('click', () => {closePopup(popupImageElement)});
+addBtnElement.addEventListener('click', () => {
+  openPopup(popupAddCard);
+}); 
+popupElementsBtnExitElement.addEventListener('click', () => {
+  closePopup(popupAddCard);
+}); 
+popupElementsForm.addEventListener('submit', evt => {
+  addNewElement(evt);
+}); 
+popupImgBtnExitElement.addEventListener('click', () => {
+  closePopup(popupImageElement)
+});
