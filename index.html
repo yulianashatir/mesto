@@ -34,26 +34,39 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
+    
     <section class="popup popup_type_profile">
         <div class="popup__container">
             <button type="button" class="popup__button-exit"></button>
             <form class="popup__input-list" name="popupForm">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input name="autorName" type="text" class="popup__input popup__input_data_name" placeholder = "Автор">
-                <input name="autorJob" type="text" class="popup__input popup__input_data_job" placeholder  = "Вид деятельности">
-                <button type="submit" class="popup__button">Сохранить</button>
+                <label class="popup__field">
+                <input id="name-input" class="popup__input" type="text" placeholder="" minlength="2" maxlength="40" required>
+                <span class="popup__input-error"></span>
+            </label>
+                <label class="popup__field">
+                <input id="job-input" class="popup__input" type="text" placeholder="" minlength="2" maxlength="200" required>   
+                <span class="popup__input-error"></span>    
+            </label>
+                <button type="submit" class="popup__button popup__button-inactive">Сохранить</button>
             </form>
         </div>
     </section>
+
     <section class="popup popup_type_elements">
         <div class="popup__container">
           <button class="popup__button-exit" type="button"></button>
-          
-            <form  class="popup__input-list" name="popup-elements-form">
+          <form  class="popup__input-list" name="popup-elements-form">
                 <h2 class="popup__title">Новое место</h2>
-              <input type="text" name="autorName" placeholder="Название" class="popup__input popup__input_place_name" required>
-              <input type="url" name="autorJob" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link" required>
-              <button class="popup__button" type="submit">Создать</button>
+                <label class="popup__field"> 
+              <input id="place-input" class="popup__input" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+              <span class="popup__input-error"></span> 
+            </label>
+              <label class="popup__field">
+              <input id="url-input" class="popup__input" type="url" placeholder="Ссылка на картинку" required />
+              <span class="popup__input-error"></span>
+              </label>
+              <button type="submit" class="popup__button popup__button-inactive">Cоздать</button>
             </form>
           </div>
       </section>
@@ -74,7 +87,8 @@
           </div>
         </li>
       </template>
-    <script src="./script/index.js"></script>  
+    <script src="./script/index.js"></script> 
+    <script src="/script/validateForms.js"></script> 
 </body>
 
 </html>

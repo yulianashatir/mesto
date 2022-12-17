@@ -37,16 +37,21 @@
 @import url(../blocks/popup/__input-list/popup__input-list.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__field/popup__field.css);
+@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__input-error/_active/popup__input-error_active.css);
+@import url(../blocks/popup/__button/__button-inactive/popup__button-inactive.css);
 
 @import url(../blocks/popup/__button/pupop__button.css);
 @import url(../blocks/popup/_type_image/popup_type_image.css);
-@import url(../blocks/popup/__container/_type_image/popup__container_type_image.css);/**/
+@import url(../blocks/popup/__container/_type_image/popup__container_type_image.css);
 @import url(../blocks/popup/__container-image/popup__container-image.css);
 @import url(../blocks/popup/__button-exit/_type_image/popup__button__exit_type_image.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__figcaption/popup__figcaption.css);
 @import url(../blocks/popup/__input/_data_name/poput__input_data_name.css);
 @import url(../blocks/popup/__input/_data_job/popup__input_data_job.css);
+@import url(../blocks/popup/__input/_type_error/popup__input_tupe_error.css);
 
 @import url(../blocks/element/__delete-button/element__delete-button.css);
 @import url(../blocks/element/__like-button/_active/element__like-button_active.css);
