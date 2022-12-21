@@ -25,8 +25,8 @@ const initialElements = [
     }
     ];
 
-const editBtnElement = document.querySelector('.profile__edit-button'); 
-const addBtnElement = document.querySelector('.profile__add-button'); 
+const popupEditBtnElement = document.querySelector('.profile__edit-button'); 
+const popupAddBtnElement = document.querySelector('.profile__add-button'); 
 //Popup 1
 const popupEditProfile = document.querySelector('.popup_type_profile'); 
 
@@ -80,13 +80,23 @@ const closePopupWithEscBtn = evt => {
     };
   };
 
-const closePopupWithClick = evt => {
-  const openedPopup = document.querySelector('.popup_opened');
-  const ElementsBtnExitElement = openedPopup.querySelector('.popup__button-exit');
-  if (evt.target.contains(ElementsBtnExitElement)) {
-    closePopup(openedPopup);
-  };
-};
+function closePopupWithClick (evt) {
+ if (evt.target.classList.contains('popup_opened')) {
+  closePopup(evt.target);
+ };
+}
+
+popupImgBtnExitElement.addEventListener('click', () => {
+    closePopup(popupImageElement)
+  }); 
+
+popupBtnExitElement.addEventListener('click', () => {
+    closePopup(popupEditProfile)
+  }); 
+  
+  popupElementsBtnExitElement.addEventListener('click', () => {
+    closePopup(popupAddCard);
+  }); 
 
 const addDataToPopupImg = ({name, link}) => {
     popupFigcaptionElement.textContent = name;
@@ -131,33 +141,25 @@ const addNewElement = evt => {
   renderElement(popupPlaceElement.value, popupLinkElement.value);
   closePopup(popupAddCard);
   popupElementsForm.reset();
-
-const inputList = Array.from(evt.target.elements['input']);
-  const buttonElement = evt.submitter; 
-  toggleButtonState(inputList, buttonElement);
 };
-
 
 initialElements.reverse().forEach(item => {
   renderElement(item.name, item.link);
 });
 
-editBtnElement.addEventListener('click', () => {
+popupEditBtnElement.addEventListener('click', () => {
   popupNameElement.value = profileNameElement.textContent;
   popupJobElement.value = profileJobElement.textContent;
   openPopup(popupEditProfile);
 });
-
-popupEditProfile.addEventListener('click', closePopupWithClick);
-
 popupProfileForm.addEventListener('submit', changeProfileData);
 
-addBtnElement.addEventListener('click', () => openPopup(popupAddCard));
-
-
-popupAddCard.addEventListener('click', closePopupWithClick);
+popupAddBtnElement.addEventListener('click', () => openPopup(popupAddCard));
 
 popupElementsForm.addEventListener('submit', addNewElement);
 
+popupEditProfile.addEventListener ('click', closePopupWithClick);
 
-popupImageElement.addEventListener('click', closePopupWithClick);
+popupAddCard.addEventListener ('click', closePopupWithClick);
+
+popupImageElement.addEventListener ('click', closePopupWithClick);
