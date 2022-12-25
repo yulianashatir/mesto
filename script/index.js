@@ -1,3 +1,4 @@
+
 const initialElements = [ 
     {
       name: 'Завтрак',
@@ -121,14 +122,14 @@ const createElement = ({name, link}) => {
   elementImgElm.addEventListener('click', function() {
     addDataToPopupImg({name, link});
     openPopup(popupImageElement);
-
 });
-  
+
 itemElement.querySelector('.element__like-button').addEventListener('click',toggleLikeBtn);
 
 itemElement.querySelector('.element__delete-button').addEventListener('click',removeElement);
 
   return itemElement;
+  
 };
 
 
@@ -136,12 +137,18 @@ const renderElement = (name, link) => {
   listElement.prepend(createElement({name, link}));
 };
 
-const addNewElement = evt => {
-  evt.preventDefault();
+const addNewElement = e => {
+  e.preventDefault();
   renderElement(popupPlaceElement.value, popupLinkElement.value);
   closePopup(popupAddCard);
   popupElementsForm.reset();
 };
+
+function disableAddButton () {
+    popupElementsBtnElement.classList.add('popup__button-inactive');
+    popupElementsBtnElement.disabled = true;
+ }
+
 
 initialElements.reverse().forEach(item => {
   renderElement(item.name, item.link);
@@ -154,7 +161,10 @@ popupEditBtnElement.addEventListener('click', () => {
 });
 popupProfileForm.addEventListener('submit', changeProfileData);
 
-popupAddBtnElement.addEventListener('click', () => openPopup(popupAddCard));
+popupAddBtnElement.addEventListener('click', function () {
+    openPopup(popupAddCard);
+    disableAddButton ();
+});
 
 popupElementsForm.addEventListener('submit', addNewElement);
 
