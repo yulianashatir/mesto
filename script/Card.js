@@ -25,7 +25,7 @@ export default class Card {
   
   generateCard() {
     this._cardElement = this._getTemplate();
-
+    this._elementDeleteButton = this._cardElement.querySelector('.element__delete-button');
     this._cardElementTitle = this._cardElement.querySelector('.element__title');
     this._cardElementImage = this._cardElement.querySelector('.element__image');
 
@@ -52,18 +52,24 @@ export default class Card {
       this._handleLikeButton();
     });
 
+    this._elementDeleteButton.addEventListener('click', evt => {
+      this._handlerDeleteButton();
+    });
    
-    this._cardElement.querySelector('.element__delete-button').addEventListener('click', evt => {
+  }
+
+  _handlerDeleteButton () {
+   
       this._cardElement.remove();
       this._cardElement = null;
-    });
+    
   }
 
   _handleLikeButton() {
     this._likeButton.classList.toggle('element__like-button_active');
   }
 
-  
+ 
   _addDataToPopupImg = (name, link) => {
     popupFigcaptionElement.textContent = name;
     popupImgElm.src = link;
